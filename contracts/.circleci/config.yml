@@ -1,0 +1,65 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/smart-contracts
+    # The primary container is an instance of the first image listed. The job's commands run in this container.
+    docker:
+      - image: circleci/node:10-browsers
+      # The secondary container is an instance of the second listed image which is run in a common network where ports exposed on the primary container are available on localhost.
+      - image: trufflesuite/ganache-cli
+    steps:
+      - checkout
+      - run:
+          name: Update npm
+          command: 'sudo npm install -g npm@latest'
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+      - run:
+          name: Install npm wee
+          command: npm install
+      - run:
+          name: Migrate Contracts
+          command: ./node_modules/truffle/build/cli.bundled.js migrate --network development
+      - run:
+          name: Test Contracts
+          command: ./node_modules/truffle/build/cli.bundled.js test --network development
+      - run:
+          name: Test coverage
+          command: ./node_modules/.bin/solidity-coverage
+        # Send notification to chatwork
+      - run:
+          name: Sending notification
+          when: on_success
+          command: |
+            if [[ true ]];  then
+              curl -X POST -H "X-ChatWorkToken: $CHATWORK_TOKEN" -d \
+                "body=
+                Your have a success build !
+                - Repository name: $CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME
+                - Author: $CIRCLE_USERNAME
+                - Branch: $CIRCLE_BRANCH
+                - Commit/pull request link: https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME/commit/$CIRCLE_SHA1
+                - Build link: https://circleci.com/gh/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME/$CIRCLE_BUILD_NUM
+                " \
+                "https://api.chatwork.com/v2/rooms/$CHATWORK_ROOM/messages"
+            fi
+      - run:
+          name: Sending notification
+          when: on_fail
+          command: |
+            if [[ true ]];  then
+              curl -X POST -H "X-ChatWorkToken: $CHATWORK_TOKEN" -d \
+                "body=
+                Your have a fail build !
+                - Repository name: $CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME
+                - Author: $CIRCLE_USERNAME
+                - Branch: $CIRCLE_BRANCH
+                - Commit/pull request link: https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME/commit/$CIRCLE_SHA1
+                - Build link: https://circleci.com/gh/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME/$CIRCLE_BUILD_NUM
+                " \
+                "https://api.chatwork.com/v2/rooms/$CHATWORK_ROOM/messages"
+            fi
+      - save_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+          paths:
+            - node_modules

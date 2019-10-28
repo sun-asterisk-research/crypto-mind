@@ -1,0 +1,382 @@
+@import './admin.css';
+
+p {
+  margin-bottom: 0.5rem !important;
+}
+
+label {
+  font-size: 1.25em !important;
+  text-align: center !important;
+}
+
+button.play-game {
+  margin-top: 3vh;
+}
+
+.margin_box div p.title {
+  font-size: 3em;
+}
+
+.set_height {
+  height: 100vh;
+  padding: 2vh;
+}
+
+.margin_box {
+  border-radius: 10px;
+  background-color: #ffffff;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+}
+
+.question {
+  height: 50%;
+}
+
+.set_full_height {
+  height: 100%;
+}
+
+.question_position {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 40%;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  font-weight: 600 !important;
+}
+
+.question .user_account button {
+  cursor: pointer;
+}
+
+/* sreen super mini, iphone 5, iphone se */
+
+@media only screen and (max-width: 430px) {
+  .margin_box {
+    height: 120vh;
+  }
+
+  .box_color.col-12.col-md-4.offset-md-0 {
+    margin-top: 26vh;
+  }
+  .question_position span {
+    font-size: 7vw;
+  }
+
+  .react-countdown-clock {
+    margin-top: -10vh;
+  }
+
+  .answer_position {
+    padding-bottom: 5vh;
+  }
+
+  .score_board {
+    height: 18vh !important;
+  }
+
+  .answer_position {
+    margin-top: 5vh;
+  }
+
+  .ranking_title span,
+  .score_board p:first-child {
+    font-size: 6vw !important;
+  }
+
+  .score_board p:nth-child(2) {
+    font-size: 5vw !important;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .margin_box div p {
+    font-size: 5vw !important;
+  }
+
+  .box_color.col-12.col-md-4 {
+    margin-top: 10%;
+  }
+
+  .button-start,
+  .button-withdraw {
+    width: 30%;
+  }
+
+  .question_position {
+    margin-bottom: 20%;
+  }
+
+  .question.col {
+    margin-top: 20%;
+  }
+
+  .question .user_account p {
+    font-size: 3vw;
+  }
+
+  .person_rank .user_account span {
+    font-size: 4.5vw;
+  }
+
+  .person_rank p:nth-child(2) {
+    font-size: 5vw;
+    font-weight: bold;
+  }
+
+  .ranking_title span,
+  .score_board p:first-child {
+    font-size: 7vw !important;
+  }
+
+  .score_board p:nth-child(2) {
+    font-size: 5vw !important;
+  }
+}
+
+/* mobible phone vertical screen */
+
+@media only screen and (max-height: 550px) and (max-width: 800px) {
+  .question .user_account p {
+    font-size: 2.5vw;
+  }
+
+  .person_rank .user_account span {
+    font-size: 4.5vw;
+  }
+
+  .answer_position {
+    padding-bottom: 10vh;
+  }
+
+  .score_board,
+  .rank {
+    background-color: white;
+  }
+
+  .rank .ranking_title {
+    height: 0;
+  }
+
+  .person_rank_box {
+    background: white;
+  }
+
+  .person_rank .user_account span {
+    font-size: 2.5vw;
+  }
+
+  .person_rank p:nth-child(2) {
+    font-size: 3.5vw;
+    font-weight: bold;
+  }
+
+  .ranking_title span,
+  .score_board p:first-child {
+    font-size: 3vw;
+  }
+
+  .score_board p:nth-child(2) {
+    font-size: 2.5vw;
+  }
+
+  .react-countdown-clock {
+    margin-top: -10vh;
+  }
+}
+
+/* mobile phone horizontal screen */
+
+@media only screen and (max-height: 550px) and (min-width: 801px) {
+  .margin_box {
+    height: 200vh;
+  }
+
+  .set_full_height {
+    height: 200vh;
+  }
+
+  .question {
+    height: 70vh;
+  }
+
+  .react-countdown-clock {
+    margin-top: -75vh;
+  }
+
+  .score_board {
+    height: 90px !important;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .question_position {
+    font-size: 24px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .toast-info .Toastify__toast.Toastify__toast--info {
+    margin-left: -7% !important;
+    margin-top: -4% !important;
+  }
+}
+
+div.modal-container {
+  display: inline-block;
+}
+
+button.withdraw,
+button.deposit {
+  padding: 2px 5px !important;
+}
+
+button.playgame {
+  margin-top: 3vh;
+}
+
+button.deposit {
+  margin-left: 3px;
+}
+
+.Toastify {
+  margin-bottom: 10px;
+}
+
+.answer_position .progress:focus {
+  background-color: #55dfa1;
+  outline: none;
+  cursor: pointer;
+}
+
+.user_account.col button {
+  outline: none;
+  cursor: pointer;
+}
+
+.center {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.answer_position {
+  display: flex;
+  position: absolute;
+  justify-content: space-around;
+  flex-direction: column;
+  width: 100%;
+  height: 60%;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.ranking_title {
+  height: 56px;
+}
+
+.rank {
+  border-radius: 10px;
+  background-color: #ffffff;
+  text-align: center;
+  height: 84%;
+}
+
+.score_board {
+  border-radius: 10px;
+  background-color: #ffffff;
+  text-align: center;
+  height: 14%;
+  padding-top: 1vh;
+}
+
+.blank_space {
+  height: 2%;
+}
+
+.score_board p:first-child {
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 0;
+}
+
+.score_board p:nth-child(2) {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 0;
+}
+
+.box_color {
+  padding-right: 10px !important;
+  padding-left: 10px !important;
+  height: 100% !important;
+}
+
+.person_rank_box {
+  height: 67vh;
+  overflow: auto;
+}
+
+.ranking_title span {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.person_rank {
+  margin: auto;
+  margin: 5%;
+  width: 90%;
+  border: 1px solid #007bff !important;
+  border-radius: 16px;
+}
+
+.person_rank p {
+  margin: auto;
+}
+
+.user_account {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-top: 2vh;
+}
+
+.user_account span {
+  white-space: nowrap;
+  overflow: hidden;
+  vertical-align: middle;
+}
+
+.ellipsis {
+  display: inline-block;
+  width: calc(50% + 1.2em);
+  text-overflow: ellipsis;
+}
+
+.indent {
+  display: inline-flex;
+  width: calc(50% - 1.2em);
+  justify-content: flex-end;
+}
+
+.countdownclock {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+canvas {
+  display: flex;
+}
+
+.font-number-question {
+  font-weight: 600 !important;
+}

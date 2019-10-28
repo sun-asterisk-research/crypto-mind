@@ -1,0 +1,39 @@
+{
+  "name": "tomogame",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "caniuse-lite": "1.0.30000974",
+    "firebase": "^5.9.3",
+    "react": "^16.8.6",
+    "react-animated-css": "^1.2.1",
+    "react-countdown-clock": "^2.6.0",
+    "react-dom": "^16.8.6",
+    "react-particles-js": "^2.6.0",
+    "react-redux": "^5.0.7",
+    "react-redux-firebase": "^2.2.6",
+    "react-router-dom": "^5.0.0",
+    "react-scripts": "2.1.8",
+    "react-scroll": "^1.7.14",
+    "react-toastify": "^5.3.2",
+    "reactstrap": "^8.0.0",
+    "redux": "^4.0.1",
+    "redux-firestore": "^0.7.3",
+    "redux-thunk": "^2.3.0",
+    "truffle-contract": "^4.0.11",
+    "truffle-hdwallet-provider": "1.0.2",
+    "web3": "^1.0.0-beta.52"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "firebase": "node ./src/config/setupFirebase.js"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": []
+}

@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css?family=Merriweather');
+
+.supper-man img {
+  width: 150px;
+  transform: rotate(45deg);
+  position: absolute;
+  top: 55%;
+  animation: animationSupperman 6s infinite linear;
+}
+
+.site-not-found {
+  text-align: center;
+}
+
+.site-not-found a {
+  text-decoration: none !important;
+  color: white !important;
+}
+
+.site-not-found .title {
+  color: #fff;
+  font-size: 130px;
+  margin-top: 40px;
+}
+
+.site-not-found p {
+  font-size: 22px;
+  color: #fff;
+}
+
+.site-not-found button {
+  padding: 10px 30px;
+  border: 0px;
+  background: #880000;
+  color: #fff;
+  font-size: 18px;
+  letter-spacing: 2px;
+  outline: none;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: 0.3s all;
+  font-family: 'Merriweather', serif;
+}
+
+.site-not-found button:hover {
+  background: #660000;
+}
+
+.site-not-found button:active {
+  transform: translate(-5px, 5px);
+}
+
+@keyframes animationSupperman {
+  0% {
+    left: -150px;
+    top: 55%;
+  }
+  10% {
+    top: 53%;
+  }
+  20% {
+    top: 58%;
+  }
+  30% {
+    top: 53%;
+  }
+  40% {
+    top: 58%;
+  }
+  50% {
+    top: 53%;
+  }
+  60% {
+    top: 58%;
+  }
+  70% {
+    top: 53%;
+  }
+  80% {
+    top: 58%;
+  }
+  90% {
+    top: 53%;
+  }
+  100% {
+    left: 110%;
+    top: 55%;
+  }
+}
+
+@keyframes animationStar {
+  0% {
+    box-shadow: 0px 0px 5px #fff;
+  }
+  20% {
+    box-shadow: 0px 0px 35px #fff;
+  }
+  40% {
+    box-shadow: 0px 0px 5px #fff;
+  }
+  60% {
+    box-shadow: 0px 0px 35px #fff;
+  }
+  80% {
+    box-shadow: 0px 0px 5px #fff;
+  }
+  100% {
+    box-shadow: 0px 0px 35px #fff;
+  }
+}

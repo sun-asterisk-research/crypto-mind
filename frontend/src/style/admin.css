@@ -1,0 +1,64 @@
+.margin_box {
+  border-radius: 10px;
+  background-color: #ffffff;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+}
+
+@media only screen and (max-width: 600px) {
+  .margin_box span {
+    font-size: 7.5vw !important;
+    padding-top: 3vh;
+    display: inline-block;
+  }
+
+  .admin_question_box {
+    margin-top: 3vh;
+  }
+
+  .admin_quesbox button {
+    font-size: 5vw !important;
+    color: #212529 !important;
+  }
+
+  .button_bounty {
+    margin-top: 5vh;
+  }
+
+  .button_bounty button {
+    width: 70%;
+    margin-top: 2vh;
+  }
+}
+
+.margin_box span {
+  font-size: 3em;
+  padding-top: 3vh;
+  display: block;
+  margin-bottom: 2vh;
+}
+
+.admin_quesbox button {
+  padding: 0.375rem 0.75rem !important;
+  font-size: 1.25em;
+  color: #212529 !important;
+  margin-top: 1%;
+}
+
+.admin_quesbox button:hover {
+  color: white !important;
+}
+
+.admin_question_box {
+  height: 70vh;
+  overflow: auto;
+}
+
+.button_bounty {
+  margin: 2%;
+}
+
+.btn.btn-primary {
+  padding: 0.375rem 0.75rem !important;
+}

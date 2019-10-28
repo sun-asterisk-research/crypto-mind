@@ -1,0 +1,137 @@
+/* design button color */
+.answer_box {
+  position: relative;
+  width: 90%;
+  text-align: left !important;
+  border-radius: 10px !important;
+}
+
+button.answer_box {
+  padding: 0px !important;
+}
+
+.btn-outline-primary {
+  color: black !important;
+  font-weight: 800 !important;
+  border: none !important;
+}
+
+.button-start,
+.button-withdraw {
+  margin-left: 5px;
+  padding: 5px !important;
+}
+
+.withdraw,
+.button-withdraw {
+  padding: 5px !important;
+  background: #624490 !important;
+  color: white !important;
+}
+
+.withdraw:hover,
+.button-withdraw:hover {
+  background: #320c6e !important;
+}
+
+button.answer_box {
+  margin-bottom: 1vh;
+}
+
+button.answer_box:focus {
+  border: 2px solid #55dfa1 !important;
+}
+
+/* color outline */
+.btn:focus,
+.btn:active {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.progress {
+  height: 2.4rem !important;
+  border-radius: 10px !important;
+}
+
+/* .progress:hover {
+  box-shadow: 0 0 3pt 2pt #55dfa1af !important;
+} */
+
+.wrong-answer > .progress-bar {
+  background-color: #adadad !important;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.progress-bar {
+  background-color: #55dfa1 !important;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.text_in_button {
+  color: #000;
+  position: absolute;
+  text-align: left;
+  font-size: medium;
+  padding-left: 4%;
+  width: 100%;
+}
+
+.user_number {
+  text-align: right;
+  padding-right: 4%;
+}
+
+@media only screen and (max-width: 700px) {
+  .switchSmall {
+    position: absolute;
+    top: 2.5vh;
+    right: 3%;
+  }
+}
+
+@media only screen and (max-width: 2500px) and (min-width: 700px) {
+  .switchSmall {
+    position: absolute;
+    top: 2.3vh;
+    right: 3%;
+  }
+}
+
+.switchSmall input {
+  display: none;
+}
+
+.switchSmall small {
+  display: inline-block;
+  width: 32px;
+  height: 16px;
+  background: #455a64;
+  border-radius: 30px;
+  position: relative;
+  cursor: pointer;
+}
+
+.switchSmall small:before {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #fff;
+  border-radius: 50%;
+  top: 3px;
+  left: 3px;
+  transition: 0.3s;
+  box-shadow: -3px 0 3px rgba(0, 0, 0, 0.1);
+}
+
+.switchSmall input:checked ~ small {
+  background: #55dfa1;
+  transition: 0.3s;
+}
+.switchSmall input:checked ~ small:before {
+  transform: translate(16px, 0px);
+  transition: 0.3s;
+}
