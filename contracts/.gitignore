@@ -3,6 +3,9 @@
 # dependencies
 /node_modules
 build
+coverage
+frontend
+coverage.json
 
 /dist/
 npm-debug.log*
