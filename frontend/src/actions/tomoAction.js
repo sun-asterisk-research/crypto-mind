@@ -286,7 +286,6 @@ export const setQuestion = (correctAnswer) => async (dispatch, getState, { getFi
                 finished: false
               })
               .then(() => {
-                console.log('done selected question');
                 dispatch({
                   type: 'INSERT_QUES'
                 });
@@ -299,10 +298,7 @@ export const setQuestion = (correctAnswer) => async (dispatch, getState, { getFi
               .collection('list_question')
               .doc(correctAnswer.id)
               .delete()
-              .then(function() {
-                console.log('doc', correctAnswer.id);
-                console.log('remove selected document');
-              })
+              .then(function() {})
               .catch(function(error) {
                 console.error('Error removing document: ', error);
               });
@@ -353,7 +349,6 @@ export const answer = (answerIndex) => async (dispatch, getState) => {
           if (doc.exists) {
             var data = doc.data();
             data.user_choice[answerIndex] = data.user_choice[answerIndex] + 1;
-            console.log('Document data:', data);
             db.collection('current_question')
               .doc('current')
               .set(data);
@@ -425,14 +420,14 @@ export const shareBounty = () => async (dispatch, getState) => {
 export const FETCH_WIN_COUNT = 'FETCH_WIN_COUNT';
 export const fetchWinCount = () => async (dispatch, getState) => {
   const state = getState();
-  let web3 = state.tomo.web3;
+  // let web3 = state.tomo.web3;
   const game = state.tomo.game;
   const from = state.tomo.aliasAccount.address;
   let winCount = await game.methods.winCount(from).call({
     from: from
   });
   let questionCount = await game.methods.currentQuestion().call({ from });
-  winCount = web3.utils.hexToNumber(winCount);
+  // winCount = web3.utils.hexToNumber(winCount);
   dispatch({
     type: FETCH_WIN_COUNT,
     winCount,
@@ -489,7 +484,6 @@ export const createAdminGame = () => async (dispatch, getState, { getFirestore }
             .get()
             .then((querySnapshot) => {
               querySnapshot.forEach((doc) => {
-                console.log('doc', doc);
                 doc.ref.delete();
               });
             })
@@ -604,15 +598,16 @@ export const updateRank = () => async (dispatch, getState) => {
   const state = getState();
   const from = state.tomo.aliasAccount.address;
   const game = state.tomo.game;
-  var web3 = state.tomo.aliasWeb3;
+  // var web3 = state.tomo.aliasWeb3;
   var ranking = [];
   var getListPlayer = await game.methods.getAllPlayers().call({ from });
   for (var i = 0; i < getListPlayer.length; i++) {
     var winCount = await game.methods.winCount(getListPlayer[i]).call({ from });
-    var correct = web3.utils.hexToNumber(winCount);
+    // var correct = web3.utils.hexToNumber(winCount);
     ranking.push({
       account: getListPlayer[i],
-      correct: correct
+      // correct: correct
+      correct: winCount
     });
   }
   ranking = ranking.sort((a, b) => b.correct - a.correct);

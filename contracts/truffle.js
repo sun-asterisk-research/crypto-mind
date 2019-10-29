@@ -11,7 +11,7 @@ module.exports = {
     },
     tomotestnet: {
       provider: () =>
-        new HDWalletProvider(process.env.MNENOMIC, 'https://testnet.tomochain.com', 0, 1, true),
+        new HDWalletProvider(process.env.MNEMONIC, 'https://testnet.tomochain.com', 0, 1, true),
       network_id: '89',
       gas: 3000000,
       gasPrice: 20000000000000,
@@ -20,7 +20,7 @@ module.exports = {
     tomomainnet: {
       provider: () =>
         new HDWalletProvider(
-          process.env.MNENOMIC,
+          process.env.MNEMONIC,
           'https://rpc.tomochain.com',
           0,
           1,

@@ -161,18 +161,6 @@ contract Game is AccessControl {
         c = a + b;
         require(c >= a,"After performing addition c is greater than a");
     }
-    function safeSub(uint256 a, uint256 b) internal pure returns (uint256 c) {
-        require(b <= a,"Before subtracting b must be less than a");
-        c = a - b;
-    }
-    function safeMul(uint256 a, uint256 b) internal pure returns (uint256 c) {
-        c = a * b;
-        require(a == 0 || c / a == b,"a == 0 || c / a == b");
-    }
-    function safeDiv(uint256 a, uint256 b) internal pure returns (uint256 c) {
-        require(b > 0,"When division b must be greater than 0");
-        c = a / b;
-    }
 
     function getAllPlayers() public view returns (address payable[] memory) {
         return players;

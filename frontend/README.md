@@ -123,7 +123,7 @@ yarn install
 Then, adding a new .env file :
 
 ```js
-MNENOMIC = 'YOUR PRIVATE SEED PHRASE';
+MNEMONIC = 'YOUR PRIVATE SEED PHRASE';
 ```
 
 Migrate contract:
@@ -137,6 +137,12 @@ yarn truffle migrate --network tomotestnet
 ```
 
 Some files will appear in **_build/contracts_** folder, there are contracts code after migrated. You need to move folder **_contracts_** to **_/src_** in frontend folder.
+
+Or run symbolic link
+
+```sh
+ln -s ./src/contracts ../contracts/build/contracts
+```
 
 **Set up Frontend**
 
